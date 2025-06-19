@@ -1,9 +1,6 @@
 import { Router } from "express";
+import { getNeoFeed } from "../controller/neocontroller";
 
 export const neoRouter: Router = Router();
 
-neoRouter.get("/", (req, res) => {
-
-
-    res.send("Hehehe, this is the NeoRouter endpoint!");
-})
+neoRouter.get("/", getNeoFeed)
