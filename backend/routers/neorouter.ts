@@ -1,6 +1,8 @@
 import { Router } from "express";
-import { getNeoFeed } from "../controller/neocontroller";
+import {  browseNeo, lookupNeo, neoFeed } from "../controller/neocontroller";
 
 export const neoRouter: Router = Router();
 
-neoRouter.get("/", getNeoFeed)
+neoRouter.get("/feed", neoFeed)
+neoRouter.get("/lookup/:id", lookupNeo);
+neoRouter.get("/browse/", browseNeo);
