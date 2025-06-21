@@ -2,7 +2,9 @@ import { catchAsync } from "async-handler-express";
 import { Request, Response } from "express";
 import { NeoBrowseResponse, NeoFeedResponse, NeoLookupResponse } from "../shared/types";
 import dotenv from "dotenv";
-import { getDateDifferenceInDays, neoBrowseURL, neoFeedURL, neoLookupURL } from "../shared/utils";
+import { getDateDifferenceInDays} from "../shared/utils";
+import { neoBrowseURL, neoFeedURL, neoLookupURL } from "../nasa-apis/neo-apis";
+import { log } from "console";
 dotenv.config();
 
 
@@ -63,7 +65,11 @@ export const lookupNeo = catchAsync(
 export const browseNeo = catchAsync(
   async (req: Request, res: Response) => {
 
-    const response = await fetch(neoBrowseURL, {
+
+    const browseURL = `${neoBrowseURL}?api_key=${process.env.NASA_API_KEY}`;
+    console.log(browseURL)
+
+    const response = await fetch(browseURL, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",

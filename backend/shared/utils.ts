@@ -1,9 +1,3 @@
-export const neoFeedURL = `https://api.nasa.gov/neo/rest/v1/feed` 
-
-export const neoLookupURL  = `https://api.nasa.gov/neo/rest/v1/neo/`;
-
-export const neoBrowseURL = `https://api.nasa.gov/neo/rest/v1/neo/browse/${process.env.NASA_API_KEY}`;
-
 
 export const getDateDifferenceInDays = (startDate: string, end_date: string): number => {
     const start = new Date(startDate);
