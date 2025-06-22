@@ -1,13 +1,17 @@
 import express from "express";
 import { neoRouter } from "./routers/neorouter";
-
 import dotenv from "dotenv";
 import { errorHandler } from "async-handler-express";
+import cors from "cors";
 
 dotenv.config();
 
 export const app: express.Application = express();
 
+
+
+
+app.use(cors())
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
