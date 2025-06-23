@@ -2,9 +2,9 @@ import type { NeoBrowseResponse } from "../shared/types";
 
 export const backendIndexurl = "http://localhost:3000/api/";
 
-export const neoBrowse =  async () : Promise<NeoBrowseResponse> => {
+export const neoBrowse =  async (pagenum :number) : Promise<NeoBrowseResponse> => {
 
-    const response  = await fetch(`${backendIndexurl}neo/browse`, {headers : {
+    const response  = await fetch(`${backendIndexurl}neo/browse?page=${pagenum}`, {headers : {
         "Content-Type": "application/json",
     }});
 
