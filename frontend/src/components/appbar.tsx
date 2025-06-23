@@ -19,7 +19,7 @@ interface Props {
 }
 
 const drawerWidth = 240;
-const navItems = ['Home', 'NEO', 'TBD'];
+const navItems = [{name: 'Home', url : "/"} , {name: 'NEO', url : "/neo"}];
 
 export default function DrawerAppBar(props: Props) {
   const { window } = props;
@@ -37,10 +37,12 @@ export default function DrawerAppBar(props: Props) {
       <Divider />
       <List>
         {navItems.map((item) => (
-          <ListItem key={item} disablePadding>
+          <ListItem key={item.name} disablePadding>
+            <a href={item.url}>
             <ListItemButton sx={{ textAlign: 'center' }}>
-              <ListItemText  primary={item} />
+              <ListItemText  primary={item.name} />
             </ListItemButton>
+            </a>
           </ListItem>
         ))}
       </List>
@@ -73,13 +75,13 @@ export default function DrawerAppBar(props: Props) {
     color: '#fff'
   }}
 >
-  2025 Space Odyssey
+ <a href='/'> 2025 Space Odyssey </a>
 </Typography>
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
             {navItems.map((item) => (
-              <Button  size='large' key={item}  sx={{ color: '#fff' }}>
-               <Typography fontFamily="cursive" variant='h5'>{item}</Typography> 
-              </Button>
+              <a href={item.url}><Button  size='large' key={item.name}  sx={{ color: '#fff' }}>
+               <Typography fontFamily="cursive" variant='h5'>{item.name}</Typography> 
+              </Button></a>
             ))}
           </Box>
         </Toolbar>

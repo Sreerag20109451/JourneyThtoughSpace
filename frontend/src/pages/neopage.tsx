@@ -9,6 +9,7 @@ import { DashboardLayout } from '@toolpad/core/DashboardLayout';
 import { DemoProvider, useDemoRouter } from '@toolpad/core/internal';
 import { DateRange, LiveTv, Search, SearchTwoTone } from '@mui/icons-material';
 import { NeoDataGrid } from '../components/neodtagrid';
+import { Outlet } from 'react-router';
 
 function DemoPageContent({ pathname }: { pathname: string }) {
   return (
@@ -46,8 +47,7 @@ export default function NeoDashBoard(props: DemoProps) {
     <DemoProvider  window={demoWindow}>
       {/* preview-start */}
       <AppProvider   branding={{
-    logo: <img src="https://www.ipac.caltech.edu/system/news_items/images/252/original/neos_logo.jpg?1669070894" alt="NEO logo" />,
-    title: 'Near Earth Object Dashboard',
+    title: 'NEO Explorer',
     homeUrl: '/neo',
   }} theme={darkTheme} 
         navigation={[
@@ -85,7 +85,7 @@ export default function NeoDashBoard(props: DemoProps) {
         window={demoWindow}
       >
         <DashboardLayout  >
-         <NeoDataGrid/>
+         <Outlet/>
         </DashboardLayout>
       </AppProvider>
     </DemoProvider>

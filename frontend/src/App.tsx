@@ -6,6 +6,8 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { createBrowserRouter, RouterProvider } from 'react-router'
 import NeoPage from './pages/neopage'
 import NeoDashBoard from './pages/neopage';
+import { NeoDataGrid } from './components/neodtagrid';
+import { NeoObjectCard } from './components/neoObjectcard';
 
 function App() {
   const queryClient = new QueryClient()
@@ -21,7 +23,15 @@ function App() {
         },
         {
           path: "neo",
-          element: <NeoDashBoard/>
+          element: <NeoDashBoard/>,
+          children:[{
+            index: true,
+            element: <NeoDataGrid />
+          },
+        {
+          path: ":id",
+          element : <NeoObjectCard />
+        }]
         }
       ]
     }

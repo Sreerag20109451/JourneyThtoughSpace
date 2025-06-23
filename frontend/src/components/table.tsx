@@ -15,7 +15,6 @@ return (
   <table className="table table-xs">
     <thead>
       <tr>
-        {/* <th className="text-white text-2xl"></th> */}
         <th className="text-white text-xl md:text-2xl">Reference Id</th>
         <th className="text-white text-xl md:text-2xl">Name</th>
         <th className="text-white text-xl md:text-2xl">Magnitude</th>
