@@ -1,0 +1,23 @@
+import type { NeoBrowseResponse } from "../shared/types";
+
+export const backendIndexurl = "http://localhost:3000/api/";
+
+export const neoBrowse =  async () : Promise<NeoBrowseResponse> => {
+
+    const response  = await fetch(`${backendIndexurl}neo/browse`, {headers : {
+        "Content-Type": "application/json",
+    }});
+
+    if (response.status === 404) {
+        throw new Error("No results found");
+    } else if (response.status === 500) {
+        throw new Error("Internal server error.");
+    } else if (response.status !== 200) {
+        throw new Error("An unexpected error occurred.");
+    }
+    
+    const responseData : NeoBrowseResponse = await response.json();
+    return responseData;
+    
+
+}

@@ -1,12 +1,11 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { AppProvider } from '@toolpad/core/AppProvider';
 import './index.css'
 import { Layout } from './components/layout'
 import Homepage from './pages/homepage'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { createBrowserRouter, RouterProvider } from 'react-router'
 import NeoPage from './pages/neopage'
+import NeoDashBoard from './pages/neopage';
 
 function App() {
   const queryClient = new QueryClient()
@@ -22,7 +21,7 @@ function App() {
         },
         {
           path: "neo",
-          element: <NeoPage />
+          element: <NeoDashBoard/>
         }
       ]
     }
@@ -30,11 +29,11 @@ function App() {
 
 
   return (
-    <>
+    <AppProvider  >
     <QueryClientProvider client={queryClient}>
       <RouterProvider router={browserRouter} />
     </QueryClientProvider>
-     </>
+     </AppProvider>
   )
 }
 

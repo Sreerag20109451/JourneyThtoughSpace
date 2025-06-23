@@ -66,7 +66,13 @@ export const browseNeo = catchAsync(
   async (req: Request, res: Response) => {
 
 
-    const browseURL = `${neoBrowseURL}?api_key=${process.env.NASA_API_KEY}`;
+    let browseURL = `${neoBrowseURL}?api_key=${process.env.NASA_API_KEY}`;
+    if( req.query.page) {
+
+      browseURL += `&page=${req.query.page}`;
+    }
+
+
     console.log(browseURL)
 
     const response = await fetch(browseURL, {

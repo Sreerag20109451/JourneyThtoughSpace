@@ -6,7 +6,7 @@ import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { useQuery } from '@tanstack/react-query';
-import { getNasaImageCollections, getRandomImage } from '../nasa-apis/imageSearch';
+import { getNasaImageCollections, getRandomImage } from '../backend-apis/imageSearch';
 import { CircularProgress } from '@mui/material';
 import type { NasaImageSearchResponse } from '../shared/types';
 

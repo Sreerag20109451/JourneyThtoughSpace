@@ -90,7 +90,7 @@ export interface CloseApproachData {
     links: NeoMultiplePageLinks,
     element_count: number,
   near_earth_objects: {
-    [date: string]: NeoObject[];
+    [date: string]: NeoLookupResponse[];
   };
   }
 
