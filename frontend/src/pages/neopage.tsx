@@ -7,9 +7,10 @@ import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import { AppProvider } from '@toolpad/core/AppProvider';
 import { DashboardLayout } from '@toolpad/core/DashboardLayout';
 import { DemoProvider, useDemoRouter } from '@toolpad/core/internal';
-import { DateRange, LiveTv, Search, SearchTwoTone } from '@mui/icons-material';
+import { BrowseGallery, DateRange, LiveTv, Search, SearchTwoTone } from '@mui/icons-material';
 import { NeoDataGrid } from '../components/neodtagrid';
 import { Outlet } from 'react-router';
+import { browserRouter } from '../App';
 
 function DemoPageContent({ pathname }: { pathname: string }) {
   return (
@@ -34,7 +35,7 @@ interface DemoProps {
 export default function NeoDashBoard(props: DemoProps) {
   const { window } = props;
 
-  const router = useDemoRouter('/movies/lord-of-the-rings');
+  const router = useDemoRouter('/');
 
   const demoWindow = window !== undefined ? window() : undefined;
   const darkTheme = createTheme({
@@ -43,51 +44,10 @@ export default function NeoDashBoard(props: DemoProps) {
     },
   });
   return (
-    // Remove this provider when copying and pasting into your project.
-    <DemoProvider  window={demoWindow}>
-      {/* preview-start */}
-      <AppProvider   branding={{
-    title: 'NEO Explorer',
-    homeUrl: '/neo',
-  }} theme={darkTheme} 
-        navigation={[
-          {
-            segment: 'Feeds',
-            title: 'Feeds',
-            icon: <CalendarMonthIcon />,
-            children: [
-              {
-                segment: 'current-datetime',
-                title: 'Live Feed',
-                icon: <LiveTv />,
-              },
-              {
-                segment: 'set-datetime',
-                title: 'Historical Feeds',
-                icon: <DateRange />,
-              },
-            ],
-          },
-          {
-            segment: 'search',
-            title: 'Search',
-            icon: <Search />,
-            children: [
-              {
-                segment: 'current-datetime',
-                title: 'Search By name',
-                icon: <SearchTwoTone />,
-              },
-            ],
-          }
-        ]}
-        router={router}
-        window={demoWindow}
-      >
         <DashboardLayout  >
          <Outlet/>
         </DashboardLayout>
-      </AppProvider>
-    </DemoProvider>
+ 
+  
   );
 }
