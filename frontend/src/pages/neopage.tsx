@@ -2,15 +2,12 @@
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import { createTheme } from '@mui/material/styles';
-import DescriptionIcon from '@mui/icons-material/Description';
-import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
-import { AppProvider } from '@toolpad/core/AppProvider';
 import { DashboardLayout } from '@toolpad/core/DashboardLayout';
-import { DemoProvider, useDemoRouter } from '@toolpad/core/internal';
-import { BrowseGallery, DateRange, LiveTv, Search, SearchTwoTone } from '@mui/icons-material';
 import { NeoDataGrid } from '../components/neodtagrid';
 import { Outlet } from 'react-router';
-import { browserRouter } from '../App';
+
+import { BrowseGallery, CalendarMonth, DateRange, Home, ListAltOutlined, LiveTv, Search, SearchOff } from '@mui/icons-material';
+import { ReactRouterAppProvider } from '@toolpad/core/react-router';;
 
 function DemoPageContent({ pathname }: { pathname: string }) {
   return (
@@ -35,18 +32,71 @@ interface DemoProps {
 export default function NeoDashBoard(props: DemoProps) {
   const { window } = props;
 
-  const router = useDemoRouter('/');
-
-  const demoWindow = window !== undefined ? window() : undefined;
+  const navigation = [
+    {
+      segment: '',
+      title: 'Home',
+      icon: <Home />,
+      
+    },
+    {
+      segment: 'neo',
+      title: 'Browse All',
+      icon: <ListAltOutlined />,
+      
+    },
+    {
+      segment: 'neo/feed',
+      title: 'Feeds',
+      icon: <CalendarMonth />,
+      children: [
+        {
+          segment: 'neo/feed/live',
+          title: 'Live Feed',
+          icon: <LiveTv />,
+        },
+        {
+          segment: 'neo/feed/historical',
+          title: 'Historical Feeds',
+          icon: <DateRange />,
+        },
+      ],
+    },
+    {
+      segment: 'neo/search',
+      title: 'Search',
+      icon: <Search />,
+      children: [
+        {
+          segment: 'neo/search/nme',
+          title: 'Search By name',
+          icon: <SearchOff />,
+        },
+      ]
+    }
+  
+  
+  
+  ]
+    
+  
+  const BRANDING = {
+    title: 'NEO Explorer',
+    homeUrl: '/neo',
+  };
+  
+  
   const darkTheme = createTheme({
     palette: {
       mode: 'dark',
     },
   });
   return (
+    <ReactRouterAppProvider navigation={navigation} branding={BRANDING} theme={darkTheme}>
         <DashboardLayout  >
          <Outlet/>
         </DashboardLayout>
+        </ReactRouterAppProvider>
  
   
   );

@@ -99,7 +99,7 @@ export const NeoObjectCard = () => {
   </Grid>}
  { imagedata && <Grid size={12}>
    <Paper elevation={3} sx={{ padding: 2, marginBottom: 2 }}>
-    <Typography variant="h3">  {data.is_potentially_hazardous_asteroid ? (
+    <Typography variant="h5">  {data.is_potentially_hazardous_asteroid ? (
       <>
         <Tooltip title="Potentially Hazardous Asteroid" arrow>
           <span style={{ cursor: "help" }}>⚠️ </span>

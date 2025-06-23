@@ -1,4 +1,4 @@
-import { AppProvider } from '@toolpad/core/AppProvider';
+
 import './index.css'
 import { Layout } from './components/layout'
 import Homepage from './pages/homepage'
@@ -20,19 +20,19 @@ export const browserRouter = createBrowserRouter([
         index: true,
         element: <Homepage />
       },
-      {
-        path: "neo",
-        element: <NeoDashBoard/>,
-        children:[{
-          index: true,
-          element: <NeoDataGrid />
-        },
-      {
-        path: ":id",
-        element : <NeoObjectCard />
-      }]
-      }
     ]
+  },
+  {
+    path: "neo",
+    element: <NeoDashBoard/>,
+    children:[{
+      index: true,
+      element: <NeoDataGrid />
+    },
+  {
+    path: ":id",
+    element : <NeoObjectCard />
+  }]
   }
 ])
 
