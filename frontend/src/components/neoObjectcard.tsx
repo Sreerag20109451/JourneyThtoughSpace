@@ -20,6 +20,8 @@ import {
 import { useEffect, useState } from "react";
 import { ExpandMoreOutlined } from "@mui/icons-material";
 import { getNasaImageCollections, getRandomImage } from "../backend-apis/imageSearch";
+import { SizeCard } from "./sizecard";
+import CloseApprochTable from "./closeApproachTable";
 
 export const NeoObjectCard = () => {
 
@@ -186,6 +188,19 @@ export const NeoObjectCard = () => {
         color: "black",
     }}
   />
+   <Chip
+    label={`First Observation Date: ${data.orbital_data.first_observation_date}`} color="primary"
+    sx={{
+      color: "black",
+      fontStyle: "bold",
+    }}
+  />
+     <Chip 
+    label={`Recent Observation: ${data.orbital_data.last_observation_date}`} color="primary"
+    sx={{
+      color: "black",
+    }}
+  />
 </Box>
           </AccordionDetails>
         </Accordion>
@@ -196,15 +211,11 @@ export const NeoObjectCard = () => {
             id="panel2-header"
           >
             <Typography component="span">
-              Orbital Data
+              Dimensions
             </Typography>
           </AccordionSummary>
           <AccordionDetails>
-            <Typography>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              Suspendisse malesuada lacus ex, sit amet blandit leo lobortis
-              eget.
-            </Typography>
+           <SizeCard estimatedDiameter={data.estimated_diameter} />
           </AccordionDetails>
         </Accordion>
         <Accordion>
@@ -215,6 +226,20 @@ export const NeoObjectCard = () => {
           >
             <Typography component="span">
               Close Approach Data
+            </Typography>
+          </AccordionSummary>
+          <AccordionDetails>
+            <CloseApprochTable closeApproachData={data.close_approach_data}/>
+          </AccordionDetails>
+        </Accordion>
+        <Accordion>
+          <AccordionSummary
+            expandIcon={<ExpandMoreOutlined />}
+            aria-controls="panel2-content"
+            id="panel2-header"
+          >
+            <Typography component="span">
+              Orbital Data
             </Typography>
           </AccordionSummary>
           <AccordionDetails>
