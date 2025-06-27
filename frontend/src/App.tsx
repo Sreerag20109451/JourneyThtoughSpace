@@ -7,6 +7,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router'
 import NeoDashBoard from './pages/neopage';
 import { NeoDataGrid } from './components/neodtagrid';
 import { NeoObjectCard } from './components/neoObjectcard';
+import { LiveNeoFeed } from './components/neoLivefeed'
 
 
 
@@ -32,6 +33,9 @@ export const browserRouter = createBrowserRouter([
   {
     path: ":id",
     element : <NeoObjectCard />
+  }, {
+    path : "feed/live",
+    element : <LiveNeoFeed/>
   }]
   }
 ])

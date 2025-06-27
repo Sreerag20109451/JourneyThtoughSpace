@@ -51,7 +51,7 @@ export default function NeoDashBoard(props: DemoProps) {
       icon: <CalendarMonth />,
       children: [
         {
-          segment: 'neo/feed/live',
+          segment: 'live',
           title: 'Live Feed',
           icon: <LiveTv />,
         },
