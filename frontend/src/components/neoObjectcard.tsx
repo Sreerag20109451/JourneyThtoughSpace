@@ -22,6 +22,8 @@ import { ExpandMoreOutlined } from "@mui/icons-material";
 import { getNasaImageCollections, getRandomImage } from "../backend-apis/imageSearch";
 import { SizeCard } from "./sizecard";
 import CloseApprochTable from "./closeApproachTable";
+import OrbitalDataCard from "./orbitalDataCard";
+
 
 export const NeoObjectCard = () => {
 
@@ -243,17 +245,12 @@ export const NeoObjectCard = () => {
             </Typography>
           </AccordionSummary>
           <AccordionDetails>
-            <Typography>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              Suspendisse malesuada lacus ex, sit amet blandit leo lobortis
-              eget.
-            </Typography>
+           <OrbitalDataCard orbitalData={data.orbital_data}/>
           </AccordionDetails>
         </Accordion>
       </div>
 
 
-        
     );
   }
 };

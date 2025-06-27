@@ -94,12 +94,10 @@ export default function CloseApproachDataForm({
           </RadioGroup>
         </FormControl>
         <FormControl component="fieldset">
-          <FormLabel component="legend" id="miss-distance-group">
+          <FormLabel component="legend" >
             Miss Distance Unit
           </FormLabel>
           <RadioGroup
-            aria-labelledby="miss-distance-group"
-            name="miss-distance"
             onChange={handleMissDistance}
             sx={{ flexDirection: 'row', gap: 2 }}
           >
