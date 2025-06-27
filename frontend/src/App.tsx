@@ -8,6 +8,7 @@ import NeoDashBoard from './pages/neopage';
 import { NeoDataGrid } from './components/neodtagrid';
 import { NeoObjectCard } from './components/neoObjectcard';
 import { LiveNeoFeed } from './components/neoLivefeed'
+import { NeoFeedByDate } from './components/neohistorical'
 
 
 
@@ -36,7 +37,14 @@ export const browserRouter = createBrowserRouter([
   }, {
     path : "feed/live",
     element : <LiveNeoFeed/>
-  }]
+  },
+  {
+    path : "feed/historical",
+    element : <NeoFeedByDate/>
+  },
+
+
+]
   }
 ])
 

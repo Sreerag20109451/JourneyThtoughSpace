@@ -60,6 +60,7 @@ export const NeoDataGrid = () => {
        
             <Box width="100%" > 
             <div className="flex flex-col  space-y-10">
+                
             <NeoTable  neoObjects={data.near_earth_objects}/> 
             <Pagination pagenum={pagenum} totalnum={data.page.total_pages} onPageChange={handlePageChange}/>
             </div>

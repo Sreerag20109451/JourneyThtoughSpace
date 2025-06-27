@@ -56,7 +56,7 @@ export default function NeoDashBoard(props: DemoProps) {
           icon: <LiveTv />,
         },
         {
-          segment: 'neo/feed/historical',
+          segment: 'historical',
           title: 'Historical Feeds',
           icon: <DateRange />,
         },

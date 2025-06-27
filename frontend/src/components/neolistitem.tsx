@@ -14,7 +14,7 @@ export default function NeoListItem( { feedData, date }: NeoListItemProps) {
   return (
     <Box sx={{ p: 4 }}>
       <Typography variant="h4" gutterBottom>
-        Near-Earth Objects for {date} 
+        NEOs on {date} 
       </Typography>
 
       {feedData.near_earth_objects[date].map((neo, index) => {
