@@ -64,7 +64,7 @@ export interface CloseApproachData {
     self: string;
   }
   
-  export interface NeoObject {
+  export interface NeoLookupResponse {
     links: Links,
     id: string,
     neo_reference_id: string,
@@ -86,10 +86,27 @@ export interface CloseApproachData {
   }
 
 
-  export interface NeoObjectsResponse{
+  export interface NeoFeedResponse{
     links: NeoMultiplePageLinks,
     element_count: number,
   near_earth_objects: {
-    [date: string]: NeoObject[];
+    [date: string]: NeoLookupResponse[];
   };
+  }
+
+
+  export interface PageProperties{
+      "size": number,
+      "total_elements": number,
+      "total_pages": number,
+      "number": number
+    
+  }
+
+  export interface NeoBrowseResponse{
+
+    links: NeoMultiplePageLinks,
+    page: PageProperties,
+    near_earth_objects: NeoLookupResponse[];
+
   }
