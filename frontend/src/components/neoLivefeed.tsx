@@ -21,6 +21,7 @@ export const LiveNeoFeed = () =>{
 
 
     useEffect(() => {
+    
 
         if(!data || !data.near_earth_objects) return;
 
