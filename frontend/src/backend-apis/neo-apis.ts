@@ -1,6 +1,6 @@
 import type { NeoBrowseResponse, NeoFeedResponse, NeoLookupResponse } from "../shared/types";
 
-export const backendIndexurl = "https://journeythtoughspace-server.onrender.com/api/";
+export const backendIndexurl = "https://journeythtoughspace.onrender.com/api/"
 
 export const neoBrowse =  async (pagenum :number) : Promise<NeoBrowseResponse> => {
 
