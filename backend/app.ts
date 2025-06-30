@@ -10,6 +10,7 @@ export const app: express.Application = express();
 
 
 const allowedOrigins = [
+  'https://journeythtoughspace-frontend.onrender.com',
   'http://localhost:5173' 
 ];
 
