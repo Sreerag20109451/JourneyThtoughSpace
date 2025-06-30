@@ -12,7 +12,6 @@ import {
   type SelectChangeEvent,
   Box,
   Paper,
-  Typography
 } from '@mui/material';
 import type { MissDistance, RelativeVelocity } from '../shared/types';
 

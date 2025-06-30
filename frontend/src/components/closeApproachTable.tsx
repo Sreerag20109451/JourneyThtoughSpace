@@ -8,8 +8,6 @@ import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import type {
   CloseApproachData,
-  MissDistance,
-  RelativeVelocity,
 } from "../shared/types";
 import type {
   MissDistanceUnit,

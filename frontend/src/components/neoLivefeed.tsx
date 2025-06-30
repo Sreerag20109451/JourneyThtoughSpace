@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import type { NeoFeedResponse } from "../shared/types";
-import { useQueries, useQuery } from "@tanstack/react-query";
-import { Box, Chip, CircularProgress, Divider, Typography } from "@mui/material";
+import { useQuery } from "@tanstack/react-query";
+import { Box,  CircularProgress,  Typography } from "@mui/material";
 import { getLiveFeed } from "../backend-apis/neo-apis";
 import NeoListItem from "./neolistitem";
 

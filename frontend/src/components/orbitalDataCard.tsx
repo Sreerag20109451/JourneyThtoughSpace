@@ -1,4 +1,4 @@
-import { Box, Card, CardContent, CardHeader, Chip, Divider, Grid, Typography } from "@mui/material";
+import {  Card, CardContent, Divider, Grid, Typography } from "@mui/material";
 import type { OrbitalData } from "../shared/types";
 
 interface OrbitalDataCardProps {

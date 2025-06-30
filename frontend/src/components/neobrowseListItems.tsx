@@ -1,5 +1,5 @@
 import { Box, Chip, Divider, Typography } from "@mui/material";
-import type { NeoBrowseResponse, NeoFeedResponse, NeoLookupResponse } from "../shared/types";
+import type {  NeoLookupResponse } from "../shared/types";
 
 interface NeoBrowseListItemProps {
 

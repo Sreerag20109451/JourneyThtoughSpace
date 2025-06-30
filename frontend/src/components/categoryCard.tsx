@@ -8,7 +8,6 @@ import Typography from '@mui/material/Typography';
 import { useQuery } from '@tanstack/react-query';
 import { getNasaImageCollections, getRandomImage } from '../backend-apis/imageSearch';
 import { CircularProgress } from '@mui/material';
-import type { NasaImageSearchResponse } from '../shared/types';
 
 import "../index.css" 
 import { Link } from 'react-router';

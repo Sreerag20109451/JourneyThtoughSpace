@@ -1,4 +1,4 @@
-import { Breadcrumbs, Grid, Typography } from "@mui/material";
+import {  Grid } from "@mui/material";
 import type { Category } from "../utils/categories";
 import CategoryCard from "./categoryCard";
 
