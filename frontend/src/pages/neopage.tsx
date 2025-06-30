@@ -68,7 +68,7 @@ export default function NeoDashBoard(props: DemoProps) {
       icon: <Search />,
       children: [
         {
-          segment: 'neo/search/nme',
+          segment: 'nameorid',
           title: 'Search By name',
           icon: <SearchOff />,
         },

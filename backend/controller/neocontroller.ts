@@ -73,6 +73,7 @@ export const browseNeo = catchAsync(
     }
 
 
+
     console.log(browseURL)
 
     const response = await fetch(browseURL, {
@@ -82,12 +83,25 @@ export const browseNeo = catchAsync(
       },
     });
 
-
+    let data
     if(response.status == 404) return res.status(404).json({ message: "NEO not found." });
     if(response.status == 500) return res.status(500).json({ message: "Internal server error." });
     if(response.status == 200) {
       const responseData :  NeoBrowseResponse = await response.json();
-      return res.status(200).json(responseData);
+      data = responseData
+      if(req.query.name){
+        data = responseData.near_earth_objects.filter((neo) => {
+          return neo.name.toLowerCase().includes((req.query.name!!.toString()).toLowerCase());
+        });
+      }
+      if(req.query.id){
+        data = responseData.near_earth_objects.filter((neo) => {
+          return neo.neo_reference_id === (req.query.id);
+        });
+      }
+
+
+      return res.status(200).json(data);
     }
 
   }

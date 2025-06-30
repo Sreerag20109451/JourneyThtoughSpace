@@ -9,6 +9,7 @@ import { NeoDataGrid } from './components/neodtagrid';
 import { NeoObjectCard } from './components/neoObjectcard';
 import { LiveNeoFeed } from './components/neoLivefeed'
 import { NeoFeedByDate } from './components/neohistorical'
+import { NeoSearch } from './components/neosearch'
 
 
 
@@ -34,13 +35,18 @@ export const browserRouter = createBrowserRouter([
   {
     path: ":id",
     element : <NeoObjectCard />
-  }, {
+  }, 
+  {
     path : "feed/live",
     element : <LiveNeoFeed/>
   },
   {
     path : "feed/historical",
     element : <NeoFeedByDate/>
+  },
+  {
+    path : "search/nameorid",
+    element : <NeoSearch/>
   },
 
 
