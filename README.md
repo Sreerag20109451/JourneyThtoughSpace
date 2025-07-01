@@ -44,7 +44,8 @@
 ### E2E Test
 - Clone the Github repo into your local machine
 - Open the cloned repo in an ide
-- ```
+- Then in Terminal, run the commands
+  ```
   npm run test-ui // To run the test in playwright ui
   npm run test-report // For reports
   npm run test -- Run the test without ui
