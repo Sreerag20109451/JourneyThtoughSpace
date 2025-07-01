@@ -10,6 +10,8 @@ import { NeoObjectCard } from './components/neoObjectcard';
 import { LiveNeoFeed } from './components/neoLivefeed'
 import { NeoFeedByDate } from './components/neohistorical'
 import { NeoSearch } from './components/neosearch'
+import { ErrorPage } from './pages/errorpage'
+import { NotFoundPage } from './pages/notfoundpage'
 
 
 
@@ -18,10 +20,12 @@ export const browserRouter = createBrowserRouter([
   {
     path: "/",
     element: <Layout/>,
+    errorElement : <ErrorPage/>,
     children : [
       {
         index: true,
-        element: <Homepage />
+        element: <Homepage />,
+        errorElement : <ErrorPage/>
       },
     ]
   },
@@ -30,28 +34,44 @@ export const browserRouter = createBrowserRouter([
     element: <NeoDashBoard/>,
     children:[{
       index: true,
-      element: <NeoDataGrid />
+      element: <NeoDataGrid />,
+      errorElement : <ErrorPage/>,
     },
   {
     path: ":id",
-    element : <NeoObjectCard />
+    element : <NeoObjectCard />,
+    errorElement : <ErrorPage/>,
   }, 
   {
     path : "feed/live",
-    element : <LiveNeoFeed/>
+    element : <LiveNeoFeed/>,
+    errorElement : <ErrorPage/>,
   },
   {
     path : "feed/historical",
-    element : <NeoFeedByDate/>
+    element : <NeoFeedByDate/>,
+    errorElement : <ErrorPage/>,
   },
   {
     path : "search/nameorid",
-    element : <NeoSearch/>
+    element : <NeoSearch/>,
+    errorElement : <ErrorPage/>,
   },
+  
 
 
-]
-  }
+],  },
+
+{
+  path : "*",
+  element: <NotFoundPage/>,
+  children :[
+    {
+      
+
+    }
+  ]
+}
 ])
 
 

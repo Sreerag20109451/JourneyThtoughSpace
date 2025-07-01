@@ -15,9 +15,6 @@ describe("Test NEO Browse Endpoints", () => {
         expect(response.status).toBe(200);
         expect(response.body).toHaveProperty("near_earth_objects");
     })
-
-
-
   
 })
 
