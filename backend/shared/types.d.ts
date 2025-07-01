@@ -110,3 +110,20 @@ export interface CloseApproachData {
     near_earth_objects: NeoLookupResponse[];
 
   }
+
+  export interface NasaCollection {
+    "version": string;
+    "href": string;
+    "items": CollectionItems[];
+    "metadata": {
+        "total_hits": number;
+        "description": string;
+        "title": string;
+    };
+    "links": CollectionLinks[];
+
+ }
+
+ export interface NasaImageSearchResponse {
+    "collection" : NasaCollection
+ }
