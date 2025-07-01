@@ -1,12 +1,12 @@
 export interface Data {
     center: string;
-    date_created: string; // ISO timestamp
+    date_created: string; 
     description: string;
     description_508: string;
     keywords: string[];
-    media_type: 'image' | 'video' | 'audio'; // assuming these are the types used by NASA API
+    media_type: 'image' | 'video' | 'audio';
     nasa_id: string;
-    secondary_creator?: string; // optional in case it's sometimes missing
+    secondary_creator?: string; 
     title: string;
   }
   

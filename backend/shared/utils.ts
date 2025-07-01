@@ -5,3 +5,4 @@ export const getDateDifferenceInDays = (startDate: string, end_date: string): nu
     const differenceInTime = end.getTime() - start.getTime();
     return Math.ceil(differenceInTime / (1000 * 3600 * 24)); 
 }
+
