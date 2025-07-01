@@ -7,5 +7,9 @@
   "dependencies": {
     "react-router": "^7.6.2"
   },
-  "scripts": {}
+  "scripts": {
+    "test-ui": "npx playwright test --ui",
+    "test" : "npx playwright test",
+    "test-report": "npx playwright show-report" 
+  }
 }
