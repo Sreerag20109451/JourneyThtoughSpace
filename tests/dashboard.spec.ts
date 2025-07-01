@@ -2,7 +2,7 @@ import test, { chromium, expect } from "@playwright/test";
 
 
 
-test.describe("Test Home Page", () => {
+test.describe("Test NEO Dashboard", () => {
 
 
     test.beforeEach(async ( {page}) => {
