@@ -21,7 +21,8 @@
 - Clone the GitHub repo into your local machine
 - Open the cloned repo in an ide
 - Create a .env file and set your nasa api key as  'NASA_API_KEY'
-- ```
+- Then in Terminal, run the commands
+  ```
   cd backend
   npm i
   npm run start
@@ -34,7 +35,8 @@
 - Clone the Github repo into your local machine
 - Open the cloned repo in an ide
 - Make sure the backend is running
-- ```
+- Then in Terminal, run the commands
+```
   cd frontend
   npm i
   npm run dev
