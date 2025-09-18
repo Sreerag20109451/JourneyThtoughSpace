@@ -1,4 +1,4 @@
-# Journey Through Space 
+# Journey Through Space - 
 ##### A user interface for Nasa's Near Earth Objects Web Services 
 
 ## Technologies Used
